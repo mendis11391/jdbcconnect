@@ -15,7 +15,7 @@ public class CustomerFacade {
         return customerDAO.getCustomerDetails();
     }
 
-    public CustomerDTO getCustomerById(Long id) {
+    public Object getCustomerById(Long id) {
         return customerDAO.getCustomerById(id);
     }
 }
