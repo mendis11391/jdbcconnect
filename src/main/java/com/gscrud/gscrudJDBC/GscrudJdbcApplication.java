@@ -1,6 +1,7 @@
 package com.gscrud.gscrudJDBC;
 
 import com.gscrud.gscrudJDBC.Facade.CustomerFacade;
+import com.gscrud.gscrudJDBC.Facade.StudentFacade;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,8 +18,8 @@ public class GscrudJdbcApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
 		return args -> {
-			CustomerFacade service = ctx.getBean(CustomerFacade.class);
-			service.getCustomers();
+			StudentFacade studentFacade = ctx.getBean(StudentFacade.class);
+			studentFacade.getAllStudents();
 		};
 	}
 
