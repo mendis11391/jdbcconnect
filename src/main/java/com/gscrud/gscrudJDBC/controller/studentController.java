@@ -2,6 +2,7 @@ package com.gscrud.gscrudJDBC.controller;
 
 import com.gscrud.gscrudJDBC.DTO.StudentDTO;
 import com.gscrud.gscrudJDBC.Facade.StudentFacade;
+import com.gscrud.gscrudJDBC.Model.StudentListResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ public class studentController {
     private StudentFacade studentFacade;
 
     @GetMapping
-    public ResponseEntity<List<StudentDTO>> getAllStudents() {
+    public ResponseEntity<StudentListResponse> getAllStudents() {
         return ResponseEntity.ok(studentFacade.getAllStudents());
     }
 
