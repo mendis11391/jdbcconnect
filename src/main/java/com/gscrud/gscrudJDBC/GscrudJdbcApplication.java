@@ -15,12 +15,4 @@ public class GscrudJdbcApplication {
 		SpringApplication.run(GscrudJdbcApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
-		return args -> {
-			StudentFacade studentFacade = ctx.getBean(StudentFacade.class);
-			studentFacade.getAllStudents();
-		};
-	}
-
 }

@@ -4,6 +4,7 @@ import com.gscrud.gscrudJDBC.DTO.StudentDTO;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Map;
 
 @Data
 public class StudentListResponse {
@@ -11,4 +12,5 @@ public class StudentListResponse {
     private Long studentsHavingAccessCount;
     private Long studentsNotHavingAccessCount;
     private List<StudentDTO> students;
+    private List <Map<String, Object>> joinedByYearData;
 }

@@ -1,5 +1,6 @@
 package com.gscrud.gscrudJDBC.controller;
 
+import com.gscrud.gscrudJDBC.DTO.StudentCourseInfo;
 import com.gscrud.gscrudJDBC.DTO.StudentDTO;
 import com.gscrud.gscrudJDBC.Facade.StudentFacade;
 import com.gscrud.gscrudJDBC.Model.StudentListResponse;
@@ -18,9 +19,14 @@ public class studentController {
     @Autowired
     private StudentFacade studentFacade;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<StudentListResponse> getAllStudents() {
         return ResponseEntity.ok(studentFacade.getAllStudents());
+    }
+
+    @GetMapping("/course")
+    public ResponseEntity<List<StudentCourseInfo>> getAllStudentsWithCourseInfo() {
+        return ResponseEntity.ok(studentFacade.getStudentsWithCourseInfo());
     }
 
     @GetMapping("/{id}")
